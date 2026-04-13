@@ -5,7 +5,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Scroll effect for high-end glassmorphism
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -24,13 +23,14 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed w-full top-0 z-[100] transition-all duration-500 px-6 py-5 ${
-        scrolled ? 'translate-y-2' : 'translate-y-0'
+        scrolled ? 'translate-y-0' : 'translate-y-0'
       }`}
     >
       <div 
         className={`max-w-7xl mx-auto flex justify-between items-center transition-all duration-500 px-8 py-4 rounded-[2.5rem] ${
           scrolled 
-          ? 'bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.3)]' 
+          /* Changed bg-white/10 to bg-black/70 and added shadow-black/50 for visibility on white background */
+          ? 'bg-black/70 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]' 
           : 'bg-transparent'
         }`}
       >
@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Desktop Menu - Floating Pill Style */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-10">
           <div className="flex gap-10">
             {navLinks.map((link) => (
@@ -77,7 +77,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile Toggle - Modern Style */}
+        {/* Mobile Toggle */}
         <button 
           className="md:hidden relative z-50 p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -90,7 +90,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay - Full Screen Glassmorphism */}
+      {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 w-full h-screen bg-[#000d1a]/95 backdrop-blur-3xl transition-all duration-500 md:hidden z-40 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col items-center justify-center h-full gap-10 px-10">
           {navLinks.map((link, i) => (
@@ -98,7 +98,7 @@ const Navbar = () => {
               key={link.name}
               href={link.href}
               onClick={() => setIsMenuOpen(false)}
-              className={`text-4xl font-black text-white uppercase tracking-tighter transition-all duration-500 delay-[${i * 100}ms] ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+              className={`text-4xl font-black text-white uppercase tracking-tighter transition-all duration-500 ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             >
               {link.name}
             </a>
