@@ -35,11 +35,11 @@ const ContactForm = () => {
               <div className="grid md:grid-cols-2 gap-4 text-left">
                 <div>
                   <label className="block text-[10px] font-bold uppercase text-gray-400 mb-2">Full Name</label>
-                  <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none text-sm transition-all" placeholder="John Doe" />
+                  <input type="text" name="name" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none text-sm transition-all" placeholder="Name" />
                 </div>
                 <div>
                   <label className="block text-[10px] font-bold uppercase text-gray-400 mb-2">Email Address</label>
-                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none text-sm transition-all" placeholder="john@company.com" />
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 outline-none text-sm transition-all" placeholder="Email" />
                 </div>
               </div>
 
