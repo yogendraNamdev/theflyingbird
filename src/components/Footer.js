@@ -38,7 +38,7 @@ const Footer = () => {
     href="mailto:theflyingbirdsofttech@gmail.com" 
     className="text-gray-300 hover:text-white transition-colors text-[13px] font-semibold lowercase break-all tracking-wide"
   >
-    theflyingbirdsofttech@gmail.com
+    theflyingbirdsorfttech@gmail.com
   </a>
 </li>
             </ul>
